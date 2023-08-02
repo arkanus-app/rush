@@ -1,7 +1,7 @@
 [
   {
     "pergunta": "Qual é o resultado da operação 8 + 5?",
-    "imagem": "https://4.bp.blogspot.com/-Rn9ZfMJsM20/UMJ1l3qlATI/AAAAAAAAAeo/6afKL0QlKO0/s1600/geo+esp.PNG",
+    "imagem": false,
     "opcoes": ["10", "12", "13", "15", "18"],
     "alternativa": "C"
   },
