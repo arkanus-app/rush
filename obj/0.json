@@ -1,5 +1,62 @@
 [
   {
-    
+    "pergunta": "Qual é o resultado da operação 8 + 5?",
+    "imagem": false,
+    "opcoes": ["10", "12", "13", "15", "18"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Quantos lados possui um quadrado?",
+    "imagem": false,
+    "opcoes": ["2", "3", "4", "5", "6"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Qual é o valor de 7 x 3?",
+    "imagem": false,
+    "opcoes": ["10", "15", "20", "21", "25"],
+    "alternativa": "D"
+  },
+  {
+    "pergunta": "Qual é a área de um retângulo com comprimento 8 e largura 4?",
+    "imagem": false,
+    "opcoes": ["16", "20", "24", "30", "32"],
+    "alternativa": "A"
+  },
+  {
+    "pergunta": "Se um pacote contém 12 canetas e você compra 2 pacotes, quantas canetas você tem ao todo?",
+    "imagem": false,
+    "opcoes": ["12", "14", "22", "24", "26"],
+    "alternativa": "D"
+  },
+  {
+    "pergunta": "Quanto é 3 elevado à potência de 4?",
+    "imagem": false,
+    "opcoes": ["9", "12", "27", "64", "81"],
+    "alternativa": "D"
+  },
+  {
+    "pergunta": "Qual é o valor de 15 ÷ 5?",
+    "imagem": false,
+    "opcoes": ["2", "3", "4", "5", "6"],
+    "alternativa": "B"
+  },
+  {
+    "pergunta": "Quantos centímetros há em 1 metro?",
+    "imagem": false,
+    "opcoes": ["10", "50", "100", "500", "1000"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Qual é o resultado da expressão (4 + 3) x 2?",
+    "imagem": false,
+    "opcoes": ["10", "14", "16", "18", "20"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Se um ingresso de cinema custa R$ 20, quanto você pagará por 3 ingressos?",
+    "imagem": false,
+    "opcoes": ["R$ 40", "R$ 50", "R$ 60", "R$ 70", "R$ 80"],
+    "alternativa": "E"
   }
 ]
