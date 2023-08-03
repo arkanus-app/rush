@@ -1,9 +1,9 @@
 [
     {
         "id": "0",
-        "name": "Geometria Espacial",
+        "name": "Matemática Básica",
         "type": "Matemática",
-        "description": "Geometria Espacial",
+        "description": "Um treino de lógica e matemática básica.",
         "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"
     }  
 ]
