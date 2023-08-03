@@ -1,0 +1,9 @@
+.borda-fofa {
+  border-radius: 15px;
+  background: #fd9d0d12;
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+
