@@ -12,5 +12,11 @@
         "type": "Programação",
         "description": "Conjunto de questões sobre lógica de programação.",
         "image": "https://www.insper.edu.br/wp-content/uploads/2023/04/Linguagen-de-programacao-2-shutterstock_1680857539.jpg.jpeg"
-    }
-]
+    },
+{
+        "id": "2",
+        "name": "1° Guerra Mundial",
+        "type": "História",
+        "description": "Questões para revisar a primeira guerra mundial.",
+        "image": "https://www.cartacapital.com.br/wp-content/uploads/2019/06/Royal_Irish_Rifles_ration_party_Somme_July_1916-420x280.jpg"
+    }]
