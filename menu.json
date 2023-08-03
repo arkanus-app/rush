@@ -5,5 +5,12 @@
         "type": "Matemática",
         "description": "Um rápido treino de lógica e matemática básica para melhorar seu raciocínio.",
         "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"
-    }  
+    },
+   {
+        "id": "1",
+        "name": "Matemática Básica",
+        "type": "Matemática",
+        "description": "Um rápido treino de lógica e matemática básica para melhorar seu raciocínio.",
+        "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"
+    }
 ]
