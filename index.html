@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
@@ -10,21 +10,45 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body class="p-1 mb-auto" style="width: 100%;height: 100%;">
-    <!-- Start: Game -->
-    <div class="container border rounded border-0 shadow mt-4 p-4" id="game">
+<body class="mb-auto p-1" style="width:100%;height:100%;">
+    <nav class="navbar navbar-expand-md bg-body">
+        <div class="container-fluid"><a class="navbar-brand link-primary" style="font-weight:bold;">RUSH</a><button data-bs-toggle="collapse" data-bs-target="#navcol-1" class="navbar-toggler"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse justify-content-between" id="navcol-1">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Novo Jogo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tutorial</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Apoie o Projeto</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" data-bs-target="#config" data-bs-toggle="modal" href="#"><svg fill="currentColor" height="1em" style="margin-bottom:5px;margin-right:3px;" viewbox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3 490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83.14 86.14L138.8 103.9C152.2 93.56 167 84.96 182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z"></path></svg>Configurações</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container border-0 shadow border rounded mt-4 p-4" id="game">
+        <div>
+            <div class="row m-1">
+                <div class="col align-self-center"><span class="badge rounded-pill bg-primary m-1" id="acertos"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="margin-bottom: 2px;margin-right: 3px;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M96 191.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64c17.67 0 32-14.33 32-31.1V223.1C128 206.3 113.7 191.1 96 191.1zM512 227c0-36.89-30.05-66.92-66.97-66.92h-99.86C354.7 135.1 360 113.5 360 100.8c0-33.8-26.2-68.78-70.06-68.78c-46.61 0-59.36 32.44-69.61 58.5c-31.66 80.5-60.33 66.39-60.33 93.47c0 12.84 10.36 23.99 24.02 23.99c5.256 0 10.55-1.721 14.97-5.26c76.76-61.37 57.97-122.7 90.95-122.7c16.08 0 22.06 12.75 22.06 20.79c0 7.404-7.594 39.55-25.55 71.59c-2.046 3.646-3.066 7.686-3.066 11.72c0 13.92 11.43 23.1 24 23.1h137.6C455.5 208.1 464 216.6 464 227c0 9.809-7.766 18.03-17.67 18.71c-12.66 .8593-22.36 11.4-22.36 23.94c0 15.47 11.39 15.95 11.39 28.91c0 25.37-35.03 12.34-35.03 42.15c0 11.22 6.392 13.03 6.392 22.25c0 22.66-29.77 13.76-29.77 40.64c0 4.515 1.11 5.961 1.11 9.456c0 10.45-8.516 18.95-18.97 18.95h-52.53c-25.62 0-51.02-8.466-71.5-23.81l-36.66-27.51c-4.315-3.245-9.37-4.811-14.38-4.811c-13.85 0-24.03 11.38-24.03 24.04c0 7.287 3.312 14.42 9.596 19.13l36.67 27.52C235 468.1 270.6 480 306.6 480h52.53c35.33 0 64.36-27.49 66.8-62.2c17.77-12.23 28.83-32.51 28.83-54.83c0-3.046-.2187-6.107-.6406-9.122c17.84-12.15 29.28-32.58 29.28-55.28c0-5.311-.6406-10.54-1.875-15.64C499.9 270.1 512 250.2 512 227z"></path>
+                        </svg>10</span><span class="badge rounded-pill bg-primary m-1" id="erros"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" style="margin-bottom: 2px;margin-right: 3px;">
+                            <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                            <path d="M128 288V64.03c0-17.67-14.33-31.1-32-31.1H32c-17.67 0-32 14.33-32 31.1v223.1c0 17.67 14.33 31.1 32 31.1h64C113.7 320 128 305.7 128 288zM481.5 229.1c1.234-5.092 1.875-10.32 1.875-15.64c0-22.7-11.44-43.13-29.28-55.28c.4219-3.015 .6406-6.076 .6406-9.122c0-22.32-11.06-42.6-28.83-54.83c-2.438-34.71-31.47-62.2-66.8-62.2h-52.53c-35.94 0-71.55 11.87-100.3 33.41L169.6 92.93c-6.285 4.71-9.596 11.85-9.596 19.13c0 12.76 10.29 24.04 24.03 24.04c5.013 0 10.07-1.565 14.38-4.811l36.66-27.51c20.48-15.34 45.88-23.81 71.5-23.81h52.53c10.45 0 18.97 8.497 18.97 18.95c0 3.5-1.11 4.94-1.11 9.456c0 26.97 29.77 17.91 29.77 40.64c0 9.254-6.392 10.96-6.392 22.25c0 13.97 10.85 21.95 19.58 23.59c8.953 1.671 15.45 9.481 15.45 18.56c0 13.04-11.39 13.37-11.39 28.91c0 12.54 9.702 23.08 22.36 23.94C456.2 266.1 464 275.2 464 284.1c0 10.43-8.516 18.93-18.97 18.93H307.4c-12.44 0-24 10.02-24 23.1c0 4.038 1.02 8.078 3.066 11.72C304.4 371.7 312 403.8 312 411.2c0 8.044-5.984 20.79-22.06 20.79c-12.53 0-14.27-.9059-24.94-28.07c-24.75-62.91-61.74-99.9-80.98-99.9c-13.8 0-24.02 11.27-24.02 23.99c0 7.041 3.083 14.02 9.016 18.76C238.1 402 211.4 480 289.9 480C333.8 480 360 445 360 411.2c0-12.7-5.328-35.21-14.83-59.33h99.86C481.1 351.9 512 321.9 512 284.1C512 261.8 499.9 241 481.5 229.1z"></path>
+                        </svg>10</span></div>
+                <div class="col text-end align-self-center"><span class="badge rounded-pill bg-primary m-1" id="fase">1/10</span></div>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-md-12 p-4 pb-0">
-                <div class="progress bg-primary bg-opacity-25 mt-2" id="clock">
-                    <div class="progress-bar bg-primary" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100" style="width: 15%;"><span class="visually-hidden">15%</span></div>
+            <div class="col-md-12 p-4 pb-0 pt-0">
+                <div class="progress bg-primary bg-opacity-25" id="clock">
+                    <div class="progress-bar bg-primary" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%;"><span class="visually-hidden">100%</span></div>
                 </div>
                 <h4 class="text-center text-primary mt-1" id="clock-text">1:00</h4>
             </div>
             <div class="col-md-12 p-4 pt-0">
                 <p class="lead" id="q-text">Paragraph</p><img class="rounded img-fluid mt-4" id="q-img" src="https://4.bp.blogspot.com/-Rn9ZfMJsM20/UMJ1l3qlATI/AAAAAAAAAeo/6afKL0QlKO0/s1600/geo+esp.PNG">
-            </div><!-- Start: Alternativas -->
+            </div>
             <div class="col justify-content-between align-self-baseline flex-wrap" id="p-alternativas">
-                <!-- Start: A -->
                 <div class="row borda-fofa m-1">
                     <div class="col-md-1 col-lg-1 d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><button class="btn btn-primary" type="button"><strong>A</strong></button></div>
                     <div class="col-md-11 align-items-center align-content-center mt-3">
@@ -32,35 +56,102 @@
                             <p class="justify-content-md-center align-items-md-center">Teste</p>
                         </div>
                     </div>
-                </div><!-- End: A -->
-            </div><!-- End: Alternativas -->
-        </div>
-    </div><!-- End: Game -->
-    <!-- Start: Seletor -->
-    <div class="container py-4 py-xl-5 mb-4" id="seletor">
-        <div class="row mb-5">
-            <div class="col-auto col-md-8 col-xl-6 col-xxl-8 text-center mx-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-3 text-primary">
-                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
-                    <path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"></path>
-                </svg>
-                <h2 class="text-primary">RUSH</h2>
-                <p class="lead">RUSH é um jogo projetado para treinar e aprimorar a capacidade de resposta e agilidade mental dos jogadores em múltiplos temas. Embarque em uma jornada intelectual desafiadora, enfrentando questões dos temas de sua escolha.</p>
+                </div>
             </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-flex justify-content-center" id="lista"></div>
-    </div><!-- End: Seletor -->
-    <!-- Start: Erro -->
-    <div class="container shadow-lg p-5 mt-5" id="erro" style="display: none;">
+    </div>
+    <div class="container py-4 py-xl-5" id="seletor">
+        <div class="row gy-4 gy-md-0">
+            <div class="col-md-6 mb-4" style="padding-bottom:0px;margin-bottom:0px;">
+                <div class="p-xl-4 m-xl-5" style="padding-left:14px;"><img class="rounded img-fluid w-100 fit-cover" style="min-height:300px;" src="assets/img/undraw_time_management_re_tk5w.svg" width="354" height="300"></div>
+            </div>
+            <div class="col-md-6 d-md-flex align-items-md-center mb-4">
+                <div style="max-width:400px;">
+                    <h2 class="display-5 text-uppercase fw-bold text-primary">Rush<svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-1 text-primary" style="padding-bottom:0px;margin-bottom:9px;margin-left:10px;"><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"></path></svg></h2>
+                    <p class="my-3">Um jogo projetado para treinar e aprimorar a capacidade de resposta e agilidade mental dos jogadores em múltiplos temas. Embarque em uma jornada intelectual desafiadora, enfrentando questões dos temas de sua escolha.</p><a class="btn btn-primary btn-lg me-2" role="button" href="#">Jogar Agora</a><a class="btn btn-outline-primary btn-lg" role="button" href="#">Tutorial</a>
+                </div>
+            </div>
+            <div class="col">
+                <div>
+                    <div class="row row-cols-2">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="col-sm form-group mb-3"><input type="text" class="form-control ps-4 pe-4 rounded-pill" name="Search" placeholder="Pesquise..."></div>
+                        </div>
+                    </div>
+                    <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3 d-flex justify-content-center" id="lista" style="margin-top:0px;padding-top:0px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="confirm">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Deseja Encerrar o Jogo em Andamento?</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>O Progresso do jogo atual não será computado, deseja continuar?</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" data-bs-dismiss="modal" type="button">Cancelar</button><button class="btn btn-primary" type="button">Sair</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="config">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title"><svg fill="currentColor" height="1em" style="padding-bottom:0px;margin-bottom:3px;margin-right:3px;" viewbox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M495.9 166.6C499.2 175.2 496.4 184.9 489.6 191.2L446.3 230.6C447.4 238.9 448 247.4 448 256C448 264.6 447.4 273.1 446.3 281.4L489.6 320.8C496.4 327.1 499.2 336.8 495.9 345.4C491.5 357.3 486.2 368.8 480.2 379.7L475.5 387.8C468.9 398.8 461.5 409.2 453.4 419.1C447.4 426.2 437.7 428.7 428.9 425.9L373.2 408.1C359.8 418.4 344.1 427 329.2 433.6L316.7 490.7C314.7 499.7 307.7 506.1 298.5 508.5C284.7 510.8 270.5 512 255.1 512C241.5 512 227.3 510.8 213.5 508.5C204.3 506.1 197.3 499.7 195.3 490.7L182.8 433.6C167 427 152.2 418.4 138.8 408.1L83.14 425.9C74.3 428.7 64.55 426.2 58.63 419.1C50.52 409.2 43.12 398.8 36.52 387.8L31.84 379.7C25.77 368.8 20.49 357.3 16.06 345.4C12.82 336.8 15.55 327.1 22.41 320.8L65.67 281.4C64.57 273.1 64 264.6 64 256C64 247.4 64.57 238.9 65.67 230.6L22.41 191.2C15.55 184.9 12.82 175.3 16.06 166.6C20.49 154.7 25.78 143.2 31.84 132.3L36.51 124.2C43.12 113.2 50.52 102.8 58.63 92.95C64.55 85.8 74.3 83.32 83.14 86.14L138.8 103.9C152.2 93.56 167 84.96 182.8 78.43L195.3 21.33C197.3 12.25 204.3 5.04 213.5 3.51C227.3 1.201 241.5 0 256 0C270.5 0 284.7 1.201 298.5 3.51C307.7 5.04 314.7 12.25 316.7 21.33L329.2 78.43C344.1 84.96 359.8 93.56 373.2 103.9L428.9 86.14C437.7 83.32 447.4 85.8 453.4 92.95C461.5 102.8 468.9 113.2 475.5 124.2L480.2 132.3C486.2 143.2 491.5 154.7 495.9 166.6V166.6zM256 336C300.2 336 336 300.2 336 255.1C336 211.8 300.2 175.1 256 175.1C211.8 175.1 176 211.8 176 255.1C176 300.2 211.8 336 256 336z"></path></svg>Configurações</h4><button class="btn-close" aria-label="Close" data-bs-dismiss="modal" type="button"></button>
+                </div>
+                <div class="modal-body">
+                    <p>As configurações, são salvas automaticamente.</p>
+                    <p class="text-center" style="margin-bottom:5px;font-weight:bold;">Aparência:&nbsp;</p>
+                    <p style="margin-bottom:5px;">Tema:&nbsp;</p>
+                    <form><select class="form-select form-select-sm mb-3" id="config_theme">
+                            <option value="light" selected="">Claro</option>
+                            <option value="dark">Escuro</option>
+                        </select></form>
+                    <p class="text-center" style="margin-bottom:5px;font-weight:bold;">Musica &amp; Som:</p>
+                    <p style="margin-bottom:5px;">Musica:</p>
+                    <form><select class="form-select form-select-sm mb-3" id="config_music">
+                            <option value="on" selected="">Ativado</option>
+                            <option value="off">Desativado</option>
+                        </select></form>
+                    <p style="margin-bottom:5px;">Sons:</p>
+                    <form><select class="form-select form-select-sm mb-3" id="config_sound">
+                            <option value="on" selected="">Ativado</option>
+                            <option value="off">Desativado</option>
+                        </select></form>
+                    <p class="text-center" style="margin-bottom:5px;font-weight:bold;">Gameplay</p>
+                    <p style="margin-bottom:5px;">Perguntas por Rodada:</p>
+                    <form><select class="form-select form-select-sm mb-3" id="config_nivel">
+                            <option value="5">Rápida (5 Perguntas)</option>
+                            <option value="">Média (10 Perguntas)</option>
+                            <option value="15">Longa (15 Perguntas)</option>
+                        </select></form>
+                    <p style="margin-bottom:5px;">Tempo Por Pergunta</p>
+                    <form><select class="form-select form-select-sm mb-3" id="config_time">
+                            <option value="1" selected="">1 Minuto</option>
+                            <option value="2">2 Minutos</option>
+                            <option value="3">3 Minutos</option>
+                            <option value="4">4 Minutos</option>
+                            <option value="5">5 Minutos</option>
+                        </select></form>
+                    <p style="margin-bottom:5px;">Armazenamento:</p><button class="btn btn-primary btn-sm m-1" id="config_reset" type="button">Redefinir Configurações</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container shadow-lg p-5 mt-5" id="erro" style="display:none;">
         <div class="row">
             <div class="col-auto col-md-8 col-xl-6 col-xxl-8 text-center mx-auto"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="1em" height="1em" fill="currentColor" class="fs-3 text-primary">
-                    <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
+                    
                     <path d="M143.9 398.6C131.4 394.1 124.9 380.3 129.4 367.9C146.9 319.4 198.9 288 256 288C313.1 288 365.1 319.4 382.6 367.9C387.1 380.3 380.6 394.1 368.1 398.6C355.7 403.1 341.9 396.6 337.4 384.1C328.2 358.5 297.2 336 256 336C214.8 336 183.8 358.5 174.6 384.1C170.1 396.6 156.3 403.1 143.9 398.6V398.6zM208.4 208C208.4 225.7 194 240 176.4 240C158.7 240 144.4 225.7 144.4 208C144.4 190.3 158.7 176 176.4 176C194 176 208.4 190.3 208.4 208zM304.4 208C304.4 190.3 318.7 176 336.4 176C354 176 368.4 190.3 368.4 208C368.4 225.7 354 240 336.4 240C318.7 240 304.4 225.7 304.4 208zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 48C141.1 48 48 141.1 48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48z"></path>
                 </svg>
                 <h2 class="text-primary">Erro</h2>
                 <p class="lead" id="erro-text">Um Erro aconteceu</p><button class="btn btn-primary" id="erro-btn" type="button">Recarregar</button>
             </div>
         </div>
-    </div><!-- End: Erro -->
+    </div>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="game.js"></script>
 </body>

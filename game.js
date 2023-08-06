@@ -1,10 +1,109 @@
+//Importar & Editar Configurações do Jogo
+//config_sound
+//config_nivel
+//config_time
+//config_reset
+//config_clear
+
+//Configuração do Tema
+var config_theme = localStorage.getItem("config_theme");
+if (config_theme == null) {
+    config_theme = "light";
+    localStorage.setItem("config_theme", config_theme);
+}
+updateTheme(config_theme);
+const tema_menu = document.getElementById("config_theme")
+tema_menu.value = config_theme
+//adicione um evento de click para o botão de mudar o tema
+tema_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+    localStorage.setItem("config_theme", tema_menu.value);
+    updateTheme(tema_menu.value);
+    config_theme = tema_menu.value;
+    console.log("Tema Atualizado:" + config_theme)
+})
+
+//Atualize o tema do jogo
+function updateTheme(theme) {
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    }
+
+//Configurar Musicas
+var config_music = localStorage.getItem("config_music");
+const music_menu = document.getElementById("config_music")
+if (config_music == null) {
+    config_music = "on";
+    localStorage.setItem("config_sound", config_music);
+}
+music_menu.value = config_music
+music_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+    localStorage.setItem("config_music", music_menu.value);
+    config_music = music_menu.value;
+    console.log("Musica Atualizada:" + config_music)
+})
+
+//configurar efeitos sonoros
+var config_sound = localStorage.getItem("config_sound");
+const sound_menu = document.getElementById("config_sound")
+if (config_sound == null) {
+    config_sound = "on";
+    localStorage.setItem("config_sound", config_sound);
+}
+sound_menu.value = config_sound
+sound_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+    localStorage.setItem("config_sound", sound_menu.value);
+    config_sound = sound_menu.value;
+    console.log("Som Atualizado:" + config_sound)
+})
+
+
+
+
+
+var config_nivel = localStorage.getItem("config_nivel");
+
+
+//Configuração do tempo
+var config_time = localStorage.getItem("config_time");
+const time_menu = document.getElementById("config_time")
+if (config_time == null) {
+    config_time = 1;
+    localStorage.setItem("config_time", config_time);
+}
+time_menu.value = config_time
+tempo_inicial = config_time
+time_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+    localStorage.setItem("config_time", time_menu.value);
+    config_time = time_menu.value;
+    tempo_inicial = config_time
+    console.log("Tempo Atualizado:" + config_time)
+})
+
+
+//se não houver configurações armazenadas, defina as configurações padrão
+
+
+if (config_nivel == null) {
+    config_nivel = "normal";
+    localStorage.setItem("config_nivel", config_nivel);
+}
+if (config_time == null) {
+    config_time = 1;
+    localStorage.setItem("config_time", config_time);
+}
+
+
+//Carregamento e Importação dos dados nas configurações
+
+
+
+
 //Gerador do Card do Menu Inicial
 function makecard(titulo,tipo,descricao,imagem,id) {
 var newcard = '' + 
 ' <div class="col d-flex">' + 
 `                <div class="card border-0 shadow-lg"><img class="img-fluid card-img-top w-100 d-block fit-cover" style="height: 200px;" src="${imagem ?? "https://quir.arkanus.app/assets/img/Leonardo_Diffusion_Picture_a_retroinspired_garage_workshop_fi_0-transformed.webp"}">` + 
 '                    <div class="card-body d-table-row p-4">' + 
-`                        <p class="text-primary card-text mb-0">${tipo}&nbsp;</p>` + 
+`                        <span class="badge bg-primary" style="margin-left: 0px;">${tipo}</span>` + 
 `                        <h4 class="card-title">${titulo}</h4>` + 
 `                        <p class="card-text">${descricao}</p>` + 
 `                        <div class="d-inline float-end"><button onclick="iniciar(${id});" class="btn btn-primary d-flex flex-grow-1 justify-content-xxl-center align-items-xxl-center mt-2" type="button" >Começar</button></div>` + 
@@ -157,7 +256,6 @@ mostrarSeletor();
 var relogio = false
 var historico = [];
 var questoes = [];
-var tempo_inicial = 1;
 var quantidade = 5
 var questao_atual = 0;
 var alternativa_atual = "";
