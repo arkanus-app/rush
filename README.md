@@ -9,3 +9,11 @@ Historico de Atualizações:
 - Perguntas Dinamicas
 - Timer
 
+1.1
+- Aba de Configurações
+- Adição de Sons
+- Adição de Tema Escuro
+- Reforma do Design da Tela de Perguntas
+- Contabilização de Pontos
+- Progresso de Questões
+- Correção de Bugs
