@@ -23,4 +23,9 @@ Historico de Atualizações:
 
 1.2
 
-- Tentativa de corrigir das configurações não carregarem no mobile.
+- Correção do Bug que impedia de alterar as configurações através do celular.
+
+1.3
+
+- Alteração no Tema Escuro
+- Adicionado novos botões no menu
