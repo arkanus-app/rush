@@ -1,11 +1,24 @@
-//Importar & Editar Configurações do Jogo
+//Importar & Editar Configurações do Jogod
 //config_sound
-//config_nivel
 //config_time
 //config_reset
 //config_clear
 
-//Configuração do Tema
+//Declaração de Sons
+var acertoAudio = new Audio("assets/audio/correct.mp3");
+var erroAudio = new Audio("assets/audio/wrong.mp3");
+var startAudio = new Audio("assets/audio/start.mp3");
+
+function PlayAudio(audio, volume) {
+    if (config_sound == "on") {
+    audio.volume = volume
+    audio.play()
+    audio.currentTime = 0
+    
+}}
+
+//Configurações
+{
 var config_theme = localStorage.getItem("config_theme");
 if (config_theme == null) {
     config_theme = "light";
@@ -57,9 +70,9 @@ sound_menu.addEventListener("click", () => { //quando o botão for clicado execu
 
 
 
+}
 
 
-var config_nivel = localStorage.getItem("config_nivel");
 
 
 //Configuração do tempo
@@ -75,24 +88,21 @@ time_menu.addEventListener("click", () => { //quando o botão for clicado execut
     localStorage.setItem("config_time", time_menu.value);
     config_time = time_menu.value;
     tempo_inicial = config_time
-    console.log("Tempo Atualizado:" + config_time)
 })
 
 
-//se não houver configurações armazenadas, defina as configurações padrão
-
-
+// Nivel
+var config_nivel = localStorage.getItem("difficulty");
+const nivel_menu = document.getElementById("config_nivel")
 if (config_nivel == null) {
-    config_nivel = "normal";
+    config_nivel = 5;
     localStorage.setItem("config_nivel", config_nivel);
 }
-if (config_time == null) {
-    config_time = 1;
-    localStorage.setItem("config_time", config_time);
-}
-
-
-//Carregamento e Importação dos dados nas configurações
+nivel_menu.value = config_nivel
+nivel_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+    localStorage.setItem("difficulty", nivel_menu.value);
+    config_nivel = nivel_menu.value;
+})
 
 
 
@@ -166,6 +176,7 @@ function TelaErro(mensagem) {
 
 //Menu Seletor de Banco de Questões
 function iniciar(id) {
+PlayAudio(startAudio, 0.8)
 var questions = fetch(`https://raw.githubusercontent.com/arkanus-app/rush/main/obj/${id}.json`)
 .then(response => response.json())
 .then(data => {
@@ -184,6 +195,7 @@ var questions = fetch(`https://raw.githubusercontent.com/arkanus-app/rush/main/o
 function StartGame(questions) {
     ocultarSeletor();
     mostrarGame();
+    score()
     //selecione uma questão aleatoria
     var questao = questions[Math.floor(Math.random() * questions.length)];
     questao_atual = questions.indexOf(questao);
@@ -194,7 +206,6 @@ function StartGame(questions) {
 
 //Fim da Função de Iniciar o Jogo
 function makeQuestion(question) {
-console.log(question)
 var p_text = document.getElementById("q-text")
 p_text.innerHTML = question.pergunta
 var img = document.getElementById("q-img")
@@ -237,15 +248,16 @@ alternativa_atual = question.alternativa
 function resposta(alternativa) {
         if (alternativa_atual ==   alternativa) {
             historico.push('acerto')
-            console.log('acerto')
+            PlayAudio(acertoAudio, 0.2)
             StartGame(questoes)
             relogio = false
         } else {
             historico.push('erro')
-            console.log('erro')
+            PlayAudio(erroAudio, 0.2)
             StartGame(questoes)
             relogio = false
         }
+        score()
     }
 
 
@@ -290,3 +302,21 @@ function Temporizador() {
     }
     , 1000)
     }
+
+
+
+const turnoDisplay = document.getElementById("fase")
+const acertosDisplay = document.getElementById("displayT")
+const errosDisplay = document.getElementById("displayF")
+
+function score() {
+    acertos = historico.filter((item) => item == 'acerto').length
+    erros = historico.filter((item) => item == 'erro').length
+    timeout = historico.filter((item) => item == 'Tempo Esgotado').length
+    turno = historico.length
+    acertosDisplay.innerHTML = acertos
+    errosDisplay.innerHTML = erros
+    turnoDisplay.innerHTML = turno+"/"+config_nivel
+    //console.log(`Acertos: ${acertos} Erros: ${erros} Tempo Esgotado: ${timeout} Turnos: ${turno}`)
+}
+
