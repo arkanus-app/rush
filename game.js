@@ -28,7 +28,7 @@ updateTheme(config_theme);
 const tema_menu = document.getElementById("config_theme")
 tema_menu.value = config_theme
 //adicione um evento de click para o botão de mudar o tema
-tema_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+tema_menu.addEventListener("change", () => { //quando o botão for clicado execute a função
     localStorage.setItem("config_theme", tema_menu.value);
     updateTheme(tema_menu.value);
     config_theme = tema_menu.value;
@@ -48,7 +48,7 @@ if (config_music == null) {
     localStorage.setItem("config_sound", config_music);
 }
 music_menu.value = config_music
-music_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+music_menu.addEventListener("change", () => { //quando o botão for clicado execute a função
     localStorage.setItem("config_music", music_menu.value);
     config_music = music_menu.value;
     console.log("Musica Atualizada:" + config_music)
@@ -62,7 +62,7 @@ if (config_sound == null) {
     localStorage.setItem("config_sound", config_sound);
 }
 sound_menu.value = config_sound
-sound_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+sound_menu.addEventListener("change", () => { //quando o botão for clicado execute a função
     localStorage.setItem("config_sound", sound_menu.value);
     config_sound = sound_menu.value;
     console.log("Som Atualizado:" + config_sound)
@@ -84,7 +84,7 @@ if (config_time == null) {
 }
 time_menu.value = config_time
 tempo_inicial = config_time
-time_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+time_menu.addEventListener("change", () => { //quando o botão for clicado execute a função
     localStorage.setItem("config_time", time_menu.value);
     config_time = time_menu.value;
     tempo_inicial = config_time
@@ -99,7 +99,7 @@ if (config_nivel == null) {
     localStorage.setItem("config_nivel", config_nivel);
 }
 nivel_menu.value = config_nivel
-nivel_menu.addEventListener("click", () => { //quando o botão for clicado execute a função
+nivel_menu.addEventListener("change", () => { //quando o botão for clicado execute a função
     localStorage.setItem("difficulty", nivel_menu.value);
     config_nivel = nivel_menu.value;
 })

@@ -20,3 +20,7 @@ Historico de Atualizações:
 - Contabilização de Pontos
 - Progresso de Questões
 - Correção de Bugs
+
+1.2
+
+- Tentativa de corrigir das configurações não carregarem no mobile.

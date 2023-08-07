@@ -1,62 +1,77 @@
 [
   {
-    "pergunta": "Qual é o resultado da operação 8 + 5?",
+    "pergunta": "Se João comprou 5 maçãs e Maria comprou 3 maçãs, quantas maçãs eles têm juntos?",
     "imagem": false,
-    "opcoes": ["10", "12", "13", "15", "18"],
+    "opcoes": ["6", "7", "8", "9", "10"],
     "alternativa": "C"
   },
   {
-    "pergunta": "Quantos lados possui um quadrado?",
+    "pergunta": "Um pacote de lápis contém 12 lápis. Se Ana comprou 3 pacotes, quantos lápis ela tem?",
     "imagem": false,
-    "opcoes": ["2", "3", "4", "5", "6"],
-    "alternativa": "C"
+    "opcoes": ["9", "12", "45", "34", "36"],
+    "alternativa": "E"
   },
   {
-    "pergunta": "Qual é o valor de 7 x 3?",
+    "pergunta": "Se um livro custa R$25 e um caderno custa R$5, quanto você gastará se comprar 2 livros e 3 cadernos?",
     "imagem": false,
-    "opcoes": ["10", "15", "20", "21", "25"],
-    "alternativa": "D"
-  },
-  {
-    "pergunta": "Qual é a área de um retângulo com comprimento 8 e largura 4?",
-    "imagem": false,
-    "opcoes": ["16", "20", "24", "30", "32"],
-    "alternativa": "A"
-  },
-  {
-    "pergunta": "Se um pacote contém 12 canetas e você compra 2 pacotes, quantas canetas você tem ao todo?",
-    "imagem": false,
-    "opcoes": ["12", "14", "22", "24", "26"],
-    "alternativa": "D"
-  },
-  {
-    "pergunta": "Quanto é 3 elevado à potência de 4?",
-    "imagem": false,
-    "opcoes": ["9", "12", "27", "64", "81"],
-    "alternativa": "D"
-  },
-  {
-    "pergunta": "Qual é o valor de 15 ÷ 5?",
-    "imagem": false,
-    "opcoes": ["2", "3", "4", "5", "6"],
+    "opcoes": ["R$60", "R$65", "R$70", "R$75", "R$80"],
     "alternativa": "B"
   },
   {
-    "pergunta": "Quantos centímetros há em 1 metro?",
+    "pergunta": "Se um aquário tem 15 peixes e 7 deles são dourados, quantos peixes não são dourados?",
     "imagem": false,
-    "opcoes": ["10", "50", "100", "500", "1000"],
+    "opcoes": ["8", "7", "6", "5", "4"],
+    "alternativa": "A"
+  },
+  {
+    "pergunta": "Se um pacote de biscoitos tem 12 biscoitos e Maria comeu 4 deles, quantos biscoitos restam no pacote?",
+    "imagem": false,
+    "opcoes": ["4", "6", "8", "10", "12"],
     "alternativa": "C"
   },
   {
-    "pergunta": "Qual é o resultado da expressão (4 + 3) x 2?",
+    "pergunta": "Se uma caixa contém 24 lápis e você retira 9 deles, quantos lápis ainda estão na caixa?",
     "imagem": false,
-    "opcoes": ["10", "14", "16", "18", "20"],
+    "opcoes": ["5", "9", "15", "20", "24"],
     "alternativa": "C"
   },
   {
-    "pergunta": "Se um ingresso de cinema custa R$ 20, quanto você pagará por 3 ingressos?",
+    "pergunta": "Se um ônibus comporta 40 passageiros e já estão dentro dele 28 passageiros, quantos assentos ainda estão vazios?",
     "imagem": false,
-    "opcoes": ["R$ 40", "R$ 50", "R$ 60", "R$ 70", "R$ 80"],
+    "opcoes": ["8", "10", "12", "14", "16"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Qual é a área de um quadrado com lados de comprimento 8 unidades?",
+    "imagem": false,
+    "opcoes": ["16", "32", "48", "64", "72"],
+    "alternativa": "D"
+  },
+  {
+    "pergunta": "Se um triângulo tem uma base de 10 unidades e uma altura de 6 unidades, qual é a sua área?",
+    "imagem": false,
+    "opcoes": ["12", "15", "20", "25", "30"],
     "alternativa": "E"
+  },
+  {
+    "pergunta": "Qual é o perímetro de um retângulo com comprimento 12 unidades e largura 5 unidades?",
+    "imagem": false,
+    "opcoes": ["22", "29", "30", "34", "42"],
+    "alternativa": "C"
+  },
+  {
+    "pergunta": "Qual é a circunferência de um círculo com raio de 7 unidades? (Use π ≈ 3)",
+    "imagem": false,
+    "opcoes": ["14", "21", "28", "32", "42"],
+    "alternativa": "E"
+  },
+  {
+    "pergunta": "Se um losango tem diagonais de comprimento 10 unidades e 24 unidades, qual é a sua área?",
+    "imagem": false,
+    "opcoes": ["120", "150", "180", "200", "240"],
+    "alternativa": "A"
   }
+  
+  
+  
 ]
