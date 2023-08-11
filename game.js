@@ -108,7 +108,7 @@ nivel_menu.addEventListener("change", () => { //quando o botão for clicado exec
 
 
 //Gerador do Card do Menu Inicial
-function makecard(titulo,tipo,descricao,imagem,id) {
+function makecard(titulo,tipo,descricao,imagem,id, link) {
 var newcard = '' + 
 ' <div class="col d-flex">' + 
 `                <div class="card border-0 shadow-lg"><img class="img-fluid card-img-top w-100 d-block fit-cover" style="height: 200px;" src="${imagem ?? "https://quir.arkanus.app/assets/img/Leonardo_Diffusion_Picture_a_retroinspired_garage_workshop_fi_0-transformed.webp"}">` + 
@@ -116,19 +116,21 @@ var newcard = '' +
 `                        <span class="badge bg-primary" style="margin-left: 0px;">${tipo}</span>` + 
 `                        <h4 class="card-title">${titulo}</h4>` + 
 `                        <p class="card-text">${descricao}</p>` + 
-`                        <div class="d-inline float-end"><button onclick="iniciar(${id});" class="btn btn-primary d-flex flex-grow-1 justify-content-xxl-center align-items-xxl-center mt-2" type="button" >Começar</button></div>` + 
+`                        <div class="d-inline float-end"><button onclick="iniciar('${link}');" class="btn btn-primary d-flex flex-grow-1 justify-content-xxl-center align-items-xxl-center mt-2" type="button" >Começar</button></div>` + 
 '                    </div>' + 
 '                </div>' + 
 '            </div>' + 
 ''; 
 return newcard;
 }
+var menu_questions = []
 var lista = document.getElementById("lista");
-var cards = fetch("https://raw.githubusercontent.com/arkanus-app/rush/main/menu.json")
+var cards = fetch("/menu.json")
 .then(response => response.json())
 .then(data => {
     data.forEach(element => {
-        lista.innerHTML += makecard(element.name,element.type,element.description,element.image,element.id);
+        lista.innerHTML += makecard(element.name,element.type,element.description,element.image,element.id,element.link);
+        menu_questions.push({name:element.name,elemente:element.type,description:element.description,img:element.image,id:element.id,link:element.link})
     });
 });
 //Fim do Gerador do Card Inicial
@@ -173,11 +175,34 @@ function TelaErro(mensagem) {
     , 5000)
 }
 
+//escute o evento de digitação dentro do input search_input
+search_input = document.getElementById("search");
+search_input.addEventListener("keyup", Search);
+//crie uma função para o evento
+
+function Search() {
+    // menu_questions contem todas as opções
+    //crie um mecanismo de busca 
+
+    var search = search_input.value.toLowerCase();
+    var search_result = menu_questions.filter((question) => {
+        return question.name.toLowerCase().includes(search);
+    }
+    );
+    //limpe a lista de opções
+    lista.innerHTML = "";
+    //adicione as opções encontradas
+    search_result.forEach(element => {
+        lista.innerHTML += makecard(element.name,element.elemente,element.description,element.img,element.id,element.link);
+    }
+    );
+}
+
 
 //Menu Seletor de Banco de Questões
 function iniciar(id) {
 PlayAudio(startAudio, 0.8)
-var questions = fetch(`https://raw.githubusercontent.com/arkanus-app/rush/main/obj/${id}.json`)
+var questions = fetch(`${id}`)
 .then(response => response.json())
 .then(data => {
         questoes = data;
@@ -193,6 +218,7 @@ var questions = fetch(`https://raw.githubusercontent.com/arkanus-app/rush/main/o
 
 //Função de Iniciar o Jogo
 function StartGame(questions) {
+    $('#level-select').modal('hide')
     ocultarSeletor();
     mostrarGame();
     score()
@@ -228,7 +254,7 @@ for (let index = 0; index < question.opcoes.length; index++) {
 function makeAlternative(alternative,text) {
     var alternativa = '' + 
     '<div class="row borda-fofa m-1">' + 
-    `                    <div class="col-md-1 col-lg-1 d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><button onclick="resposta('${alternative}');"class="btn btn-primary" type="button"><strong>${alternative}</strong></button></div>` + 
+    `                    <div class="col-md-1 col-lg-1 d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><button onclick="resposta('${alternative}');"class="btn btn-outline-primary border-1" type="button"><strong>${alternative}</strong></button></div>` + 
     '                    <div class="col-md-11 align-items-center align-content-center mt-3">' + 
     '                        <div class="text-break d-flex p-1">' + 
     `                            <p class="justify-content-md-center align-items-md-center">${text}</p>` + 

@@ -1,7 +1,22 @@
 [
     {
         "id": "0",
+        "link": "https://raw.githubusercontent.com/arkanus-app/rush/main/obj/0.json",
         "name": "Matemática Básica",
+        "type": "Matemática",
+        "description": "Um rápido treino de lógica e matemática básica para melhorar seu raciocínio.",
+        "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"
+    },
+    {
+        "id": "1",
+        "name": "Física Quantica",
+        "type": "Matemática",
+        "description": "Um rápido treino de lógica e matemática básica para melhorar seu raciocínio.",
+        "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Historia",
         "type": "Matemática",
         "description": "Um rápido treino de lógica e matemática básica para melhorar seu raciocínio.",
         "image": "https://static.mundoeducacao.uol.com.br/mundoeducacao/2020/04/poliedros-imagem-principal.jpg"

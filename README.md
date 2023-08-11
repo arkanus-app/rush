@@ -29,3 +29,11 @@ Historico de Atualizações:
 
 - Alteração no Tema Escuro
 - Adicionado novos botões no menu
+
+1.4
+
+- Correção de Bugs
+- Menu de Configurações agora é acessivel durante a seleção de questões
+- Novo Menu Seletor
+- Mecanismo de Busca de Questões
+
