@@ -253,14 +253,16 @@ for (let index = 0; index < question.opcoes.length; index++) {
 
 function makeAlternative(alternative,text) {
     var alternativa = '' + 
-    '<div class="row borda-fofa m-1">' + 
-    `                    <div class="col-md-1 col-lg-1 d-md-flex justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><button onclick="resposta('${alternative}');"class="btn btn-outline-primary border-1" type="button"><strong>${alternative}</strong></button></div>` + 
-    '                    <div class="col-md-11 align-items-center align-content-center mt-3">' + 
+    '            <div class="col justify-content-between align-self-baseline flex-wrap" id="p-alternativas">' + 
+    '                <div class="row row-cols-2 borda-fofa m-1">' + 
+    `                    <div class="col-2 col-sm-2 col-md-1 col-lg-1 d-flex d-sm-flex d-md-flex align-items-center align-items-sm-center justify-content-md-center align-items-md-center justify-content-lg-center align-items-lg-center"><button class="btn btn-outline-primary" onclick="resposta('${alternative}');" type="button"><strong>${alternative}</strong></button></div>` + 
+    '                    <div class="col-9 col-md-11 align-items-center align-content-center mt-3">' + 
     '                        <div class="text-break d-flex p-1">' + 
     `                            <p class="justify-content-md-center align-items-md-center">${text}</p>` + 
     '                        </div>' + 
     '                    </div>' + 
     '                </div>' + 
+    '            </div>' + 
     '';
     return alternativa;
 }

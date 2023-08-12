@@ -36,4 +36,3 @@ Historico de Atualizações:
 - Menu de Configurações agora é acessivel durante a seleção de questões
 - Novo Menu Seletor
 - Mecanismo de Busca de Questões
-
